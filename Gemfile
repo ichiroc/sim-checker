@@ -11,6 +11,7 @@ gem 'puma'
 gem 'sass-rails'
 
 # additional gems
+gem 'devise'
 gem 'hamlit-rails'
 gem 'pg'
 gem 'webpacker'
