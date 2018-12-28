@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'hamlit-rails'
+gem 'pg'
 gem 'webpacker'
 
 group :development, :test do
