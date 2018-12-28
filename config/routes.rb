@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # TODO: 後で存在するパスに変える
-  root to: 'home#index'
+  get 'visitors/index'
+  devise_for :users, controllers: {
+               omniauth_callbacks: 'users/omniauth_callbacks'
+             }
+  root to: 'visitors#index'
 end

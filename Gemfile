@@ -11,12 +11,15 @@ gem 'puma'
 gem 'sass-rails'
 
 # additional gems
+gem 'dotenv-rails'
 gem 'hamlit-rails'
 gem 'pg'
 gem 'webpacker'
 
 # auth
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
