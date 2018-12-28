@@ -11,10 +11,12 @@ gem 'puma'
 gem 'sass-rails'
 
 # additional gems
-gem 'devise'
 gem 'hamlit-rails'
 gem 'pg'
 gem 'webpacker'
+
+# auth
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
