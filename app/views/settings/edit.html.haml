@@ -1,0 +1,5 @@
+%h1 設定
+
+- if current_user.iijmio_token.blank?
+  .alert IIJ mio の設定がされていません
+  = link_to 'IIJ mio トークンを発行', iijmio_authorization_url
