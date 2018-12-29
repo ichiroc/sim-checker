@@ -3,7 +3,8 @@ class SettingsController < ApplicationController
 
   def edit
     if current_user.iijmio_token.present?
-      @packet = IijmioApi.new(current_user).packet.body
+      client = IijmioApi.new(current_user)
+      @total_coupon_volume = client.total_coupon_volume
     end
   end
 end

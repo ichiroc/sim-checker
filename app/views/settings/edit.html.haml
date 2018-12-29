@@ -4,7 +4,7 @@
   .alert IIJ mio の設定がされていません
   = link_to 'IIJ mio トークンを発行', iijmio_authorization_url
 - else
-  = @packet
+  現在のクーポン残量 #{@total_coupon_volume}MB
   %dl
     %dt IIJ mio アクセストークン
     %dd= current_user.iijmio_token
