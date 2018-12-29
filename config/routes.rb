@@ -4,5 +4,7 @@ Rails.application.routes.draw do
              }
   root to: 'visitors#index'
 
-  resource :setting, only: %i[edit update]
+  resource :setting, only: %i[edit update] do
+    resource :iijmio_token, only: %i[show create], module: :settings
+  end
 end
