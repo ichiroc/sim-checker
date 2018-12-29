@@ -283,6 +283,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_bot_rails
+  faraday
   hamlit-rails
   jbuilder
   listen

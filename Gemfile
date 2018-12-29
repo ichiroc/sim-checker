@@ -12,6 +12,7 @@ gem 'sass-rails'
 
 # additional gems
 gem 'dotenv-rails'
+gem 'faraday'
 gem 'hamlit-rails'
 gem 'pg'
 gem 'webpacker'

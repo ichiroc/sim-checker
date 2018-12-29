@@ -4,6 +4,7 @@
   .alert IIJ mio の設定がされていません
   = link_to 'IIJ mio トークンを発行', iijmio_authorization_url
 - else
+  = @packet
   %dl
     %dt IIJ mio アクセストークン
     %dd= current_user.iijmio_token
