@@ -6,6 +6,12 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 const postIIJMioToken = () => {
   const params = anchorToHash(location.hash)
   axios.post('/setting/iijmio_token', params)
+    .then((response) => {
+      location.href = '/setting/edit'
+    })
+    .catch((error) => {
+      alert(`何か失敗しました！ ${error}`)
+    })
 }
 
 const anchorToHash = (_anchorText) => {
