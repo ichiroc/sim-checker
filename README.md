@@ -1,24 +1,50 @@
-# README
+# IIJmio用SIMクーポン残量チェッカー
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+IIJmio のSIMクーポンの残量をチェックして、100MB超過する毎にメール通知する。
+エコプラン非対応。
 
-Things you may want to cover:
+## 使い方
 
-* Ruby version
+必要なもの
 
-* System dependencies
+- google client id
+- google secret
+- iijmio developer id (https://www.iijmio.jp/hdd/coupon/mioponapi.jsp)
+- サーバー環境(herokuとか)
 
-* Configuration
+環境変数を設定
 
-* Database creation
+```
+GOOGLE_APP_CLIENT_ID=hoge
+GOOGLE_APP_SECRET=fuga
+IIJMIO_DEVELOPER_ID=foo
+IIJMIO_REDIRECT_URL=http://example.com/setting/iijmio_token
+```
 
-* Database initialization
+DBセットアップ
 
-* How to run the test suite
+```
+rails db:setup
+rails db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+サーバー起動
 
-* Deployment instructions
+```
+rails s
+```
 
-* ...
+サービスにログインして設定
+
+1. トップページにアクセス
+2. Googleログイン
+3. IIJmio のアクセストークンを設定
+
+
+任意のタイミングで定期的に下記のコマンドを実行する。
+
+```sh
+rake cron:check_total_coupon_volume
+```
+
+実行時、前回のデータ量から100MB超過指定たらメール通知します。
