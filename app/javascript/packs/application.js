@@ -9,3 +9,6 @@
 
 import '../views/iijmio.js'
 import '../stylesheets/application.sass'
+
+import Rails from 'rails-ujs'
+Rails.start()

@@ -10,3 +10,4 @@
     %dd= current_user.iijmio_token
     %dt IIJ mio アクセストークン取得日時
     %dd= l current_user.iijmio_token_created_at
+= link_to 'ログアウト', destroy_user_session_path, method: :delete
