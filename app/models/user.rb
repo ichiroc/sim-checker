@@ -20,4 +20,13 @@ class User < ApplicationRecord
   def deliver_total_coupon_volume_notification
     ScheduleMailer.total_coupon_volume_notification(self).deliver
   end
+
+  def update_volume_and_notify
+    client = IijmioApi.new(self)
+    current_volume = client.total_coupon_volume || 0
+    if (previous_volume / 100).round != (current_volume / 100).round
+      ScheduleMailer.threshold_exceed_notification(self, current_volume).deliver
+    end
+    update!(previous_volume: current_volume, previous_volume_updated_at: Time.current)
+  end
 end
