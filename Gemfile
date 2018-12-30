@@ -30,6 +30,8 @@ group :development, :test do
   gem 'capybara'
   gem 'chromedriver-helper'
   gem 'factory_bot_rails'
+  gem 'letter_opener'
+  gem 'letter_opener_web'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
 end
