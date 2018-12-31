@@ -9,6 +9,6 @@ class ScheduleMailer < ApplicationMailer
   def threshold_exceed_notification(user, current_volume)
     @user = user
     @current_volume = current_volume
-    mail(to: user.email, subject: "[SIM-CHECKER] #{current_volume}MB 超過")
+    mail(to: user.email, subject: "[SIM-CHECKER] 残量 #{current_volume}MB")
   end
 end
