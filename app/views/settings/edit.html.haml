@@ -7,7 +7,7 @@
   現在のクーポン残量 #{@total_coupon_volume}MB
   %dl
     %dt IIJ mio アクセストークン
-    %dd= current_user.iijmio_token
+    %dd= current_user.iijmio_token.truncate(10)
     %dt IIJ mio アクセストークン取得日時
     %dd= l current_user.iijmio_token_created_at
 = link_to 'ログアウト', destroy_user_session_path, method: :delete
