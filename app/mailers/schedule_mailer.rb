@@ -11,4 +11,9 @@ class ScheduleMailer < ApplicationMailer
     @current_volume = current_volume
     mail(to: user.email, subject: "[SIM-CHECKER] 残量 #{current_volume}MB")
   end
+
+  def error_notification(user, error)
+    @error = error
+    mail(to: user.email, subject: '[SIM-CHECKER] エラー通知 #{error.message}')
+  end
 end
